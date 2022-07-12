@@ -24,7 +24,7 @@ class InMemoryToDoRepo:ToDoRepository {
         return todo
     }
 
-    override fun removeToDO(id: Int): Boolean {
+    override fun removeToDo(id: Int): Boolean {
         return todos.removeIf { it.id == id }
     }
 

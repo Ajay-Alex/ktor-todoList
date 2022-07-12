@@ -11,7 +11,7 @@ interface ToDoRepository {
 
     fun addToDo(draft:ToDoDraft):ToDo
 
-    fun removeToDO(id:Int):Boolean
+    fun removeToDo(id:Int):Boolean
 
     fun updateToDo(id:Int, draft:ToDoDraft):Boolean
 

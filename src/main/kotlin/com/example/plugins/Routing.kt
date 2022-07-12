@@ -2,6 +2,7 @@ package com.example.plugins
 
 import com.example.entities.ToDoDraft
 import com.example.repository.InMemoryToDoRepo
+import com.example.repository.MySQLToDoRepository
 import com.example.repository.ToDoRepository
 import io.ktor.server.routing.*
 import io.ktor.http.*
@@ -13,7 +14,7 @@ fun Application.configureRouting() {
 
     routing {
 
-        val repository:ToDoRepository= InMemoryToDoRepo()
+        val repository:ToDoRepository= MySQLToDoRepository()
 
         get("/") {
             call.respondText("Hello ToDo List!")
