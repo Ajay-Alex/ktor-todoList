@@ -75,7 +75,7 @@ fun Application.configureRouting() {
                 )
                 return@delete
             }
-            val removed=repository.removeToDO(id)
+            val removed=repository.removeToDo(id)
             if(!removed){
                 call.respond(
                     HttpStatusCode.NotFound,

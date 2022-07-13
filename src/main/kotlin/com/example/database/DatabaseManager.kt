@@ -14,7 +14,7 @@ import org.ktorm.entity.toList
 class DatabaseManager {
     //config
     private val hostname="localhost"
-    private val databaseName= "ktor-todo"
+    private val databaseName= "ktor_todo"
     private val username= "root"
     private val password= "password"
 
@@ -36,8 +36,8 @@ class DatabaseManager {
 
     fun addToDo(draft: ToDoDraft):ToDo{
         val id= ktormDatabase.insertAndGenerateKey(DBTodoTable){
-            set(DBTodoTable.title,draft.title)
-            set(DBTodoTable.done,draft.done)
+            set(it.title,draft.title)
+            set(it.done,draft.done)
         } as Int
 
         return ToDo(id,draft.title,draft.done)
